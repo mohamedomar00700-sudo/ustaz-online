@@ -4,7 +4,7 @@ import type { ActivityLog } from '../types';
 import { 
   FileText, AlertCircle, RefreshCw, 
   Check, X, CheckCircle, ShieldAlert, Calendar, AlertTriangle
-} from 'lucide-react';
+} from '../customIcons';
 
 interface SupervisorProps {
   currentPath: string;

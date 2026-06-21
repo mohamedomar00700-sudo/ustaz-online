@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { UserRole } from '../types';
 import { getDb, saveDb } from '../mockData';
 import { supabase, isSupabaseConfigured } from '../supabaseClient';
-import { GraduationCap, Users, Globe, Lock, Mail, User, AlertCircle } from 'lucide-react';
+import { GraduationCap, Users, Globe, Lock, Mail, User, AlertCircle } from '../customIcons';
 import academyLogo from '../assets/logo.png';
 
 interface AuthProps {

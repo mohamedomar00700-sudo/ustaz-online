@@ -4,7 +4,7 @@ import type { ActivityLog } from '../types';
 import { ChatSystem } from '../components/ChatSystem';
 import { 
   Calendar, Bell, Save, Plus, Trash2
-} from 'lucide-react';
+} from '../customIcons';
 
 interface TeacherProps {
   currentPath: string;

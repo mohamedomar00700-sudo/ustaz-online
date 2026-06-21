@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bell, Search, ChevronDown, LogOut } from 'lucide-react';
+import { Bell, Search, ChevronDown, LogOut } from '../customIcons';
 import { getDb } from '../mockData';
 
 interface TopbarProps {

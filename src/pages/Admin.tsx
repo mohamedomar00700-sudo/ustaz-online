@@ -4,7 +4,7 @@ import type { Session, UserRole } from '../types';
 import { 
   Users, Calendar, FileText, 
   Search, Plus, Trash2, CheckCircle2, AlertTriangle, Video, Clock, Database
-} from 'lucide-react';
+} from '../customIcons';
 
 interface AdminProps {
   currentPath: string;

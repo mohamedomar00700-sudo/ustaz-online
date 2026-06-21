@@ -1,6 +1,6 @@
 import React from 'react';
 import type { UserRole } from '../types';
-import { Shield, Users, User, Landmark } from 'lucide-react';
+import { Shield, Users, User, Landmark } from '../customIcons';
 
 interface RoleSwitcherProps {
   currentRole: UserRole;

@@ -4,7 +4,7 @@ import type { Session, ActivityLog } from '../types';
 import { ChatSystem } from '../components/ChatSystem';
 import { 
   BookOpen, Clock, Users, GraduationCap, Video, AlertCircle, Star, CheckSquare, Bell
-} from 'lucide-react';
+} from '../customIcons';
 
 interface StudentProps {
   currentPath: string;

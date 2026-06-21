@@ -26,19 +26,32 @@ export const App: React.FC = () => {
     return (localStorage.getItem('ustaz_role') as UserRole) || 'student';
   });
 
+  // Helper to extract clean path from hash
+  const getCleanPath = () => {
+    const hash = window.location.hash;
+    if (hash) {
+      return hash.replace(/^#/, '') || '/';
+    }
+    return '/';
+  };
+
   // Simple State-Based Router
   const [currentPath, setCurrentPath] = useState<string>(() => {
-    return window.location.pathname || '/';
+    return getCleanPath();
   });
 
   // Keep history synchronised
   useEffect(() => {
     const handleLocationChange = () => {
-      setCurrentPath(window.location.pathname);
+      setCurrentPath(getCleanPath());
     };
 
     window.addEventListener('popstate', handleLocationChange);
-    return () => window.removeEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
   }, []);
 
   // Supabase real-time sync & session listener
@@ -114,7 +127,7 @@ export const App: React.FC = () => {
   }, []);
 
   const navigate = (path: string) => {
-    window.history.pushState({}, '', path);
+    window.location.hash = path;
     setCurrentPath(path);
   };
 

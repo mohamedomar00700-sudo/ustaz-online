@@ -3,7 +3,7 @@ import type { UserRole } from '../types';
 import { 
   Landmark, Users, Calendar, BarChart3, FileText, Database, Settings,
   Shield, Bell, AlertCircle, RefreshCw, Clock, MessageSquare, PlusCircle, User, LogOut, CheckSquare
-} from 'lucide-react';
+} from '../customIcons';
 import { getDb } from '../mockData';
 import academyLogo from '../assets/logo.png';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Landmark, ArrowLeft } from 'lucide-react';
+import { Landmark, ArrowLeft } from '../customIcons';
 
 interface NotFoundProps {
   onReturnHome: () => void;

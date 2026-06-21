@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import type { ChatMessage, User } from '../types';
 import { getDb, saveDb } from '../mockData';
-import { Paperclip, Send, AlertCircle, ShieldAlert, FileText, CheckCheck } from 'lucide-react';
+import { Paperclip, Send, AlertCircle, ShieldAlert, FileText, CheckCheck } from '../customIcons';
 
 interface ChatSystemProps {
   currentUserId: string;
