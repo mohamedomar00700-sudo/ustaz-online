@@ -26,13 +26,17 @@ export const App: React.FC = () => {
     return (localStorage.getItem('ustaz_role') as UserRole) || 'student';
   });
 
-  // Helper to extract clean path from hash
+  // Helper to extract clean path from hash (falling back to pathname)
   const getCleanPath = () => {
     const hash = window.location.hash;
     if (hash) {
       return hash.replace(/^#/, '') || '/';
     }
-    return '/';
+    let path = window.location.pathname;
+    if (path.startsWith('/ustaz-online')) {
+      path = path.slice('/ustaz-online'.length);
+    }
+    return path || '/';
   };
 
   // Simple State-Based Router
