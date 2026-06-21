@@ -5,12 +5,22 @@
     <title>أكاديمية أستاذ أونلاين</title>
     <script type="text/javascript">
       var l = window.location;
+      var path = l.pathname;
+      var repoName = 'ustaz-online';
+      var basePath = '';
+      var route = '';
+      if (path.indexOf('/' + repoName) !== -1) {
+        basePath = '/' + repoName;
+        route = path.slice(path.indexOf('/' + repoName) + ('/' + repoName).length);
+      } else {
+        basePath = '';
+        route = path;
+      }
+      route = route.replace(/^\/+/, '');
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + l.pathname.split('/').indexOf('ustaz-online')).join('/') +
-        '/?/' +
-        l.pathname.slice(1).split('/').slice(1).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        basePath + '/#' + (route ? '/' + route : '') +
+        l.search +
         l.hash
       );
     </script>
