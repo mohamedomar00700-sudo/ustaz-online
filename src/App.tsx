@@ -44,6 +44,11 @@ export const App: React.FC = () => {
     return getCleanPath();
   });
 
+  const navigate = (path: string) => {
+    window.location.hash = path;
+    setCurrentPath(path);
+  };
+
   // Keep history synchronised
   useEffect(() => {
     const handleLocationChange = () => {
@@ -76,7 +81,7 @@ export const App: React.FC = () => {
           .eq('id', session.user.id)
           .single();
 
-        let role: UserRole = 'student';
+        let role: UserRole;
         if (error || !profile) {
           // Provision new profile
           const signupRole = (localStorage.getItem('ustaz_signup_role') as UserRole) || 'student';
@@ -130,10 +135,7 @@ export const App: React.FC = () => {
     };
   }, []);
 
-  const navigate = (path: string) => {
-    window.location.hash = path;
-    setCurrentPath(path);
-  };
+
 
   const handleLoginSuccess = (email: string, role: UserRole) => {
     localStorage.setItem('ustaz_isLoggedIn', 'true');
